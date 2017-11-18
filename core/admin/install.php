@@ -485,7 +485,17 @@ else
 
 			if (!$row || !isset($row['Value']) || strtolower($row['Value']) != 'yes')
 			{
-				error($lang_install['MySQL InnoDB Not Supported']);
+				// check InnoDB support for new mysql versions
+				$result = $forum_db->query("SHOW ENGINES");
+				$found_innodb = false;
+				while ($row = $forum_db->fetch_assoc($result)) {
+					if ($row["Engine"] == "InnoDB") {
+						$found_innodb = true;
+					}
+				}
+				if (!$found_innodb) {
+					error($lang_install['MySQL InnoDB Not Supported']);
+				}
 			}
 		}
 	}
@@ -974,8 +984,8 @@ else
 
 	if (in_array($db_type, array('mysql', 'mysqli', 'mysql_innodb', 'mysqli_innodb')))
 	{
-		$schema['UNIQUE KEYS']['user_id_ident_idx'] = array('user_id', 'ident(25)');
-		$schema['INDEXES']['ident_idx'] = array('ident(25)');
+		$schema['UNIQUE KEYS']['user_id_ident_idx'] = array('user_id', 'ident(40)');
+		$schema['INDEXES']['ident_idx'] = array('ident(40)');
 	}
 
 	$forum_db->create_table('online', $schema);

@@ -1,5 +1,11 @@
 2017-11-18 16:36:00
 ===================
+function re-definition avoidance check
+class method visibility and scope fixed
+Install time InnoDB check for availability
+error reporting with better clarity
+Search list pages start and end limits set correctly
+coding foreach instead of for with counter
 forum_desc field added to query
 Initial import of PunBB v1.4.4
 Forked to https://github.com/apmuthu/PunBB
