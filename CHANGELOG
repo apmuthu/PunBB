@@ -1,5 +1,6 @@
 2017-11-18 16:36:00
 ===================
+!= changed to !==
 function re-definition avoidance check
 class method visibility and scope fixed
 Install time InnoDB check for availability
