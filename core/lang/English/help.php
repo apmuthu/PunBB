@@ -13,6 +13,7 @@ $lang_help = array(
 'Bold text'				=>	'Bold text',
 'Underlined text'		=>	'Underlined text',
 'Italic text'			=>	'Italic text',
+'Strikethrough text'	=>	'Strikethrough text',
 'Red text'				=>	'Red text',
 'Blue text'				=>	'Blue text',
 'Heading text'			=>	'Heading text',

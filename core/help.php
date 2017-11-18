@@ -86,6 +86,10 @@ if (!$section || $section == 'bbcode')
 				<samp><span class="bbu"><strong><?php echo $lang_help['Bold, underlined text'] ?></strong></span></samp>
 			</div>
 			<div class="entry-content">
+				<code>[del]<?php echo $lang_help['Strikethrough text'] ?>[/del]</code> <span><?php echo $lang_help['produces'] ?></span>
+				<samp><s><?php echo $lang_help['Strikethrough text'] ?></s></samp>
+			</div>
+			<div class="entry-content">
 				<code>[h]<?php echo $lang_help['Heading text'] ?>[/h]</code> <span><?php echo $lang_help['produces'] ?></span>
 				<div class="entry-content"><h5><samp><?php echo $lang_help['Heading text'] ?></samp></h5></div>
 			</div>
