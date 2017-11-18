@@ -3011,7 +3011,7 @@ function csrf_confirm_form()
 	($hook = get_hook('fn_csrf_confirm_form_pre_header_load')) ? eval($hook) : null;
 
 ?>
-	<div class="main-content main-frm">
+<div class="main">
 	<div class="main-head">
 		<h2 class="hn"><span><?php echo $lang_common['Confirm action head'] ?></span></h2>
 	</div>

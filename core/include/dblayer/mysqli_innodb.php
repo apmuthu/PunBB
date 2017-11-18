@@ -258,6 +258,14 @@ class DBLayer
 	{
 		if ($this->link_id)
 		{
+		    if ($this->in_transaction)
+		    {
+		        if (defined('FORUM_SHOW_QUERIES') || defined('FORUM_DEBUG'))
+		            $this->saved_queries[] = array('COMMIT', 0);
+		    
+		        @mysqli_query($this->link_id, 'COMMIT');
+		    }
+		    		    
 			if ($this->query_result)
 				@mysqli_free_result($this->query_result);
 
