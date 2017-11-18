@@ -33,7 +33,7 @@ class DBLayer
 	);
 
 
-	function DBLayer($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
+	function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
 	{
 		// Prepend $db_name with the path to the forum root directory
 		$db_name = FORUM_ROOT.$db_name;
@@ -65,7 +65,11 @@ class DBLayer
 			return $this->link_id;
 	}
 
-
+	function __destruct()
+	{
+	    $this->close();
+	}
+	
 	function start_transaction()
 	{
 		++$this->in_transaction;

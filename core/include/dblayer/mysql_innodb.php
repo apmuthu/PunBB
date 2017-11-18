@@ -28,7 +28,7 @@ class DBLayer
 	);
 
 
-	function DBLayer($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
+	function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
 	{
 		$this->prefix = $db_prefix;
 
@@ -52,7 +52,11 @@ class DBLayer
 		return $this->link_id;
 	}
 
-
+	function __destruct()
+	{
+	    $this->close();
+	}
+	
 	function start_transaction()
 	{
 		++$this->in_transaction;

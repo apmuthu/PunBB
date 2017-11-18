@@ -1,5 +1,7 @@
 2017-11-18 16:36:00
 ===================
+Synched to upstream master as of 2017-01-12
+DB Class constructors and destructors syntax update
 InnoDB transaction wrapper, div styling
 Copyright year update
 PHP min version checks for extension installs
