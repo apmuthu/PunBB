@@ -4,6 +4,8 @@ Whitespace fixes
 Array subscript wrappers {} => [] for PHP 7 compatibility
 http://punbb.informer.com/ => https://punbb.informer.com/
 
+Variable name typo fixed - @MioVisman
+
 2017-11-18 18:00:00
 ===================
 Added del tag for Strikethrough text
