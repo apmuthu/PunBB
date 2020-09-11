@@ -1,3 +1,9 @@
+2020-09-11 21:00:00
+===================
+Whitespace fixes
+Array subscript wrappers {} => [] for PHP 7 compatibility
+http://punbb.informer.com/ => https://punbb.informer.com/
+
 2017-11-18 18:00:00
 ===================
 Added del tag for Strikethrough text

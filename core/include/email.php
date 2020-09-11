@@ -132,7 +132,6 @@ function server_parse($socket, $expected_response)
 function smtp_mail($to, $subject, $message, $headers = '')
 {
 	global $forum_config;
-
 	$recipients = explode(',', $to);
 
 	// Sanitize the message

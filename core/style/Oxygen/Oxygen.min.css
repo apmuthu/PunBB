@@ -2516,8 +2516,8 @@ button[disabled]:focus {
   font-weight: normal;
   font-style: normal;
 }
-a.nav-toggle{display:block; padding:0.43em 1.45em; clear:both; color:#fff; font-weight:bold; font-size:1.2em; height:38px; 
-	-moz-box-sizing: border-box; 
+a.nav-toggle{display:block; padding:0.43em 1.45em; clear:both; color:#fff; font-weight:bold; font-size:1.2em; height:38px;
+	-moz-box-sizing: border-box;
     box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -2636,12 +2636,12 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	html{min-width:320px;}
 	.brd{padding-left:0; padding-right:0; min-width:320px; width:auto;}
 	#brd-visit #visit-links{clear:left; text-align:left;}
-	
+
 	/*main-content*/
 	li.info-topics, li.info-posts, li.info-views, li.info-replies{width:5em;}
 	li.info-lastpost{width:9em; padding-right: 1em;}
 	li.info-lastpost strong{display:block;}
-	
+
 	.main-content .main-item ul{margin-left: -20em; right:-21em; width: 20em;}
 	.main-content .main-item{padding-right:21em;}
 	.item-summary .info-topics, .item-summary .info-replies{width:5em; left:979em;}
@@ -2649,7 +2649,7 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	.item-summary .info-lastpost{left: 989em;}
 	.item-summary .info-forum{width:15em; left:969em;}
 	p.forum-noview .info-replies{left:984em;}
-	
+
 	.forum-forums .main-item ul{margin-left: -30em; right:-31em; width: 30em;}
 	.forum-forums .main-item{padding-right:31em;}
 	li.info-forum{width:15em;}
@@ -2657,8 +2657,8 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
   .post-title small, .post-title small a{white-space: normal;}
   .crumbs span, .crumbs a{ white-space: normal; }
   .crumbs{overflow: hidden;}
-  
-	
+
+
 	/*post*/
 	.postbody, .posthead{margin-left:15em;}
   .postbody{overflow: hidden;}
@@ -2678,7 +2678,7 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 		border-width: 1px;
 		line-height: normal;
 		color: #fafafa;
-		background: #4897d9; 
+		background: #4897d9;
 		border-color: #2575ae;
 		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -2703,16 +2703,16 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 		-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, .2);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, .2)
 	}
-	
+
 	.fld-input{display:inline-block; max-width:100%;}
 	.fld-input input, .fld-input select{max-width:100%;}
-	
+
 	p.options{float:none; margin-top:0;}
 	.options a:link{/*white-space:nowrap;*/ line-height:1.5;}
 	.options > span{display:inline-block; padding: 0 0.3em 0 0; margin:0.25em 0.25em 0.25em 0;}
-	
+
 	.frm-buttons>.submit{margin:0; display:inline-block;}
-	
+
 	/*footer*/
 	#brd-about, #brd-stats{padding:0 1.5em 1em;}
 	#qjump{padding:0;}
@@ -2728,9 +2728,9 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	.mf-set .mf-field{float:none; border:none; padding:0;}
 	.mf-set .mf-field .fld-input{display:inline-block; float:right;}
 	.mf-set .mf-box .forum-field{width:auto; float:left; font-weight:bold; font-size:1.2em;}
-	.mf-set .mf-field .fld-input input{width:100px;} 
+	.mf-set .mf-field .fld-input input{width:100px;}
 	.mf-set legend span{font-weight:normal;}
-	
+
 	.frm-form .mf-set .mf-field .fld-input{float:none; display:block; margin-bottom:1em;}
 	.frm-form .mf-set .mf-field .fld-input input{width:90%;}
 }
@@ -2747,46 +2747,46 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	/*nav*/
 	ul#brd-admod,#brd-navlinks ul,#brd-navlinks ul, .main-menu ul, .admin-menu ul{float:none;}
 	#brd-navlinks, .main-menu, .admin-menu{padding-left:0; padding-right:0; font-size:1.2em;}
-	#brd-navlinks li, .main-menu li, .admin-menu li, #brd-navlinks a, .main-menu 
+	#brd-navlinks li, .main-menu li, .admin-menu li, #brd-navlinks a, .main-menu
 	a, .admin-menu a{float:none; display:block; margin:0; padding:0;}
 	#brd-navlinks a, .main-menu a, .admin-menu a{padding:0.43em 1.45em;}
 	#brd-navlinks li, .main-menu li, .admin-menu li{border-top:1px solid rgba(0,0,0,0.1)}
-  
+
   #brd-navlinks li+li, .main-menu li+li, .admin-menu li+li{display: none;}
   #brd-navlinks.nav-collapse li+li, .main-menu.nav-collapse li+li, .admin-menu.nav-collapse li+li{display: block;}
-	
+
 	/*admin-submenu*/
 	.admin-submenu{font-size:1.2em; line-height:1.5}
 	.admin-submenu li{margin-right:0.5em; display:inline-block; margin-bottom:0.25em; margin-top:0.25em}
 	.admin-submenu a{display:inline-block; white-space:nowrap;}
-  
+
   .main-head .hn{padding-right: 0;}
-	
+
 	/*main-content*/
 	li.info-topics, li.info-posts, li.info-views, li.info-replies{display:none;}
 	.main-content .main-item ul{margin-left: -10em; right:-11em; width: 10em;}
 	.main-content .main-item{padding-right:11em;}
-	
+
 	.item-summary .info-topics, .item-summary .info-replies,
 	.item-summary .info-posts, .item-summary .info-views{display:none;}
 	.item-summary .info-forum{width:15em; left:975em;}
 	p.forum-noview .info-replies{display:none;}
 	.item-summary .info-lastpost{width:9em; padding-left:1em;}
-	
+
 	.forum-forums .main-item ul{margin-left: -25em; right:-26em; width: 25em;}
 	.forum-forums .main-item{padding-right:26em;}
 	.postbody{padding-right: 1em;}
   .entry-content .codebox{font-size: 0.8em;}
   .entry-content pre{padding-right: 0.8em;}
 	.posthead .post-byline a, .posthead .post-byline strong{font-size: 0.8em;}
-	
+
 	/*footer*/
 	#copyright{text-align:center;}
 	#qjump{float:none;}
 	#qjump .frm-input{display:block; line-height:0;}
 	#qjump-submit{height:0; padding:0;}
 	#brd-about #qjump-select, #brd-stats #qjump-select{width:100%}
-	
+
 	/*post*/
 	.postbody, .posthead{margin-left:10em;}
 	.postfoot{padding-left:10em;}
@@ -2795,18 +2795,18 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	.postbody .post-author ul.author-info{display:none;}
   p.posting{text-align: left; float: none; clear: both;}
   .item-newposts{margin: 0 -0.3em; font-size: 0.9em;}
-  
-	
-	/*form set*/ 
+
+
+	/*form set*/
 	.ct-box{padding:0.5em 0;}
 	.main-frm .ct-box{padding:0.5em 1em;}
 	.sf-set, .mf-set, .txt-set, .ct-set{padding-left:0;}
 	.txt-box label,
 	.sf-box label, .sf-box .aslabel{float:none;}
 	.txt-set label span,
-	.sf-set .text label span, 
-	.sf-set .select label span, 
-	.sf-set .aslabel span, 
+	.sf-set .text label span,
+	.sf-set .select label span,
+	.sf-set .aslabel span,
 	.ct-set .ct-legend{float:none; width:auto; text-align:left; padding:2px 0; margin:0 0 2em 0;}
 	.txt-set .fld-input{padding:0;}
 	.sf-set .fld-input{padding:0; top:2.3em;}
@@ -2820,12 +2820,12 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	.ct-set .ct-legend{float:none; margin:0; width:auto; text-align:left;}
 	.checklist{margin:0;}
 	.button-set .submit{padding-left:0}
-	
+
 	/*user table*/
   /*
-	#brd-userlist table .tc0, 
-	#brd-userlist table .tc1, 
-	#brd-userlist table .tc2, 
+	#brd-userlist table .tc0,
+	#brd-userlist table .tc1,
+	#brd-userlist table .tc2,
 	#brd-userlist table .tc3{width:auto; padding: 0.4em 0.5em;}
 	#brd-userlist table .tc2{width:7%; min-width:50px;}
   */
@@ -2837,8 +2837,8 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
   #brd-userlist table th{display: none;}
   #brd-userlist table td{display: block; width: auto !important; text-align: left !important;}
   #brd-userlist table .even td{background: rgba(0,0,0,0.02);}
- 
-	
+
+
 }
 
 @media screen and (max-width: 560px) {
@@ -2855,17 +2855,17 @@ a.nav-toggle:hover,a.nav-toggle:focus{color:#fff; text-decoration:none;}
 	li.info-lastpost{display:none;}
 	.item-summary .info-lastpost{display:none;}
 	.item-summary .info-posts, .item-summary .info-views{/*display:block; left:994em; top:0;*/ display: none;}
-	
+
 	.main-content .main-item ul{margin-left: -5em; right:-6em; width: 5em; display: none;}
 	.main-content .main-item{padding-right:0;}
-	
+
 	li.info-forum{display:none;}
 	.forum-forums .main-item ul{margin-left: -10em; right:-11em; width: 10em;}
 	.forum-forums .main-item{padding-right:11em;}
 	.item-summary .info-forum{display:none;}
 	p.forum-noview .info-lastpost{display:block; top:0;}
-	.forum-forums li.info-lastpost{display:block;}	
-	
+	.forum-forums li.info-lastpost{display:block;}
+
 	/*post*/
 	.postbody, .posthead{margin-left:100px; }
 	.postbody, .posthead .hn{padding-left:10px}

@@ -9,7 +9,6 @@
  * @package PunBB
  */
 
-
 if (!defined('FORUM_ROOT'))
 	define('FORUM_ROOT', '../');
 require FORUM_ROOT.'include/common.php';
@@ -62,7 +61,7 @@ if ($forum_user['g_id'] == FORUM_ADMIN)
 			$hotfixes[] = urlencode($row['id']);
 		}
 
-		$punbb_updates = '<a href="http://punbb.informer.com/update/?version='.urlencode($forum_config['o_cur_version']).'&amp;hotfixes='.implode(',', $hotfixes).'">'.$lang_admin_index['Check for updates manual'].'</a>';
+		$punbb_updates = '<a href="https://punbb.informer.com/update/?version='.urlencode($forum_config['o_cur_version']).'&amp;hotfixes='.implode(',', $hotfixes).'">'.$lang_admin_index['Check for updates manual'].'</a>';
 	}
 }
 
@@ -192,7 +191,7 @@ ob_start();
 				<div class="ct-box">
 					<h3 class="ct-legend hn"><span><?php echo $lang_admin_index['PunBB community'] ?></span></h3>
 					<ul class="data-list">
-						<li><span><?php echo $lang_admin_index['Forums'] ?>: <a href="http://punbb.informer.com/forums/">Forums</a></span></li>
+						<li><span><?php echo $lang_admin_index['Forums'] ?>: <a href="https://punbb.informer.com/forums/">Forums</a></span></li>
 						<li><span><?php echo $lang_admin_index['Twitter'] ?>: <a href="https://twitter.com/punbb_forum">@punbb_forum</a></span></li>
 						<li><span><?php echo $lang_admin_index['Development'] ?>: <a href="https://github.com/punbb/punbb">https://github.com/punbb</a></span></li>
 					</ul>

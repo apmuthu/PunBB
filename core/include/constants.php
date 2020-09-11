@@ -21,4 +21,4 @@ define('FORUM_DATABASE_QUERY_MAXIMUM_LENGTH', 140000);
 define('FORUM_SEARCH_MIN_WORD', 3);
 define('FORUM_SEARCH_MAX_WORD', 20);
 
-define('FORUM_PUN_EXTENSION_REPOSITORY_URL', 'http://punbb.informer.com/extensions/1.4');
+define('FORUM_PUN_EXTENSION_REPOSITORY_URL', 'https://punbb.informer.com/extensions/1.4');

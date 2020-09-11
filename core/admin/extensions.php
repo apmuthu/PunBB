@@ -50,7 +50,7 @@ if (isset($_GET['install']) || isset($_GET['install_hotfix']))
 		$manifest = is_readable(FORUM_ROOT.'extensions/'.$id.'/manifest.xml') ? file_get_contents(FORUM_ROOT.'extensions/'.$id.'/manifest.xml') : false;
 	else
 	{
-		$remote_file = get_remote_file('http://punbb.informer.com/update/manifest/'.$id.'.xml', 16);
+		$remote_file = get_remote_file('https://punbb.informer.com/update/manifest/'.$id.'.xml', 16);
 		if (!empty($remote_file['content']))
 			$manifest = $remote_file['content'];
 	}

@@ -27,7 +27,7 @@ class DBLayer
 	);
 
 
-	function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $foo)
+    function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $foo)
 	{
 		$this->prefix = $db_prefix;
 
@@ -50,18 +50,15 @@ class DBLayer
 		return $this->link_id;
 	}
 
-
 	function start_transaction()
 	{
 		return;
 	}
 
-
 	function end_transaction()
 	{
 		return;
 	}
-
 
 	function query($sql, $unbuffered = false)
 	{
@@ -90,7 +87,6 @@ class DBLayer
 			return false;
 		}
 	}
-
 
 	function query_build($query, $return_query_string = false, $unbuffered = false)
 	{
@@ -158,7 +154,6 @@ class DBLayer
 		return ($return_query_string) ? $sql : $this->query($sql, $unbuffered);
 	}
 
-
 	function result($query_id = 0, $row = 0, $col = 0)
 	{
 		if ($query_id)
@@ -173,60 +168,50 @@ class DBLayer
 			return false;
 	}
 
-
 	function fetch_assoc($query_id = 0)
 	{
 		return ($query_id) ? @mysqli_fetch_assoc($query_id) : false;
 	}
-
 
 	function fetch_row($query_id = 0)
 	{
 		return ($query_id) ? @mysqli_fetch_row($query_id) : false;
 	}
 
-
 	function num_rows($query_id = 0)
 	{
 		return ($query_id) ? @mysqli_num_rows($query_id) : false;
 	}
-
 
 	function affected_rows()
 	{
 		return ($this->link_id) ? @mysqli_affected_rows($this->link_id) : false;
 	}
 
-
 	function insert_id()
 	{
 		return ($this->link_id) ? @mysqli_insert_id($this->link_id) : false;
 	}
-
 
 	function get_num_queries()
 	{
 		return $this->num_queries;
 	}
 
-
 	function get_saved_queries()
 	{
 		return $this->saved_queries;
 	}
-
 
 	function free_result($query_id = false)
 	{
 		return ($query_id) ? @mysqli_free_result($query_id) : false;
 	}
 
-
 	function escape($str)
 	{
 		return is_array($str) ? '' : mysqli_real_escape_string($this->link_id, $str);
 	}
-
 
 	function error()
 	{
@@ -236,7 +221,6 @@ class DBLayer
 
 		return $result;
 	}
-
 
 	function close()
 	{
@@ -251,12 +235,10 @@ class DBLayer
 			return false;
 	}
 
-
 	function set_names($names)
 	{
 		return $this->query('SET NAMES \''.$this->escape($names).'\'');
 	}
-
 
 	function get_version()
 	{
@@ -268,20 +250,17 @@ class DBLayer
 		);
 	}
 
-
 	function table_exists($table_name, $no_prefix = false)
 	{
 		$result = $this->query('SHOW TABLES LIKE \''.($no_prefix ? '' : $this->prefix).$this->escape($table_name).'\'');
 		return $this->num_rows($result) > 0;
 	}
 
-
 	function field_exists($table_name, $field_name, $no_prefix = false)
 	{
 		$result = $this->query('SHOW COLUMNS FROM '.($no_prefix ? '' : $this->prefix).$table_name.' LIKE \''.$this->escape($field_name).'\'');
 		return $this->num_rows($result) > 0;
 	}
-
 
 	function index_exists($table_name, $index_name, $no_prefix = false)
 	{
@@ -299,7 +278,6 @@ class DBLayer
 
 		return $exists;
 	}
-
 
 	function create_table($table_name, $schema, $no_prefix = false)
 	{
@@ -351,7 +329,6 @@ class DBLayer
 		$this->query($query) or error(__FILE__, __LINE__);
 	}
 
-
 	function drop_table($table_name, $no_prefix = false)
 	{
 		if (!$this->table_exists($table_name, $no_prefix))
@@ -359,7 +336,6 @@ class DBLayer
 
 		$this->query('DROP TABLE '.($no_prefix ? '' : $this->prefix).$table_name) or error(__FILE__, __LINE__);
 	}
-
 
 	function add_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = null, $no_prefix = false)
 	{
@@ -374,7 +350,6 @@ class DBLayer
 		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' ADD '.$field_name.' '.$field_type.($allow_null ? ' ' : ' NOT NULL').($default_value !== null ? ' DEFAULT '.$default_value : ' ').($after_field !== null ? ' AFTER '.$after_field : '')) or error(__FILE__, __LINE__);
 	}
 
-
 	function alter_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = null, $no_prefix = false)
 	{
 		if (!$this->field_exists($table_name, $field_name, $no_prefix))
@@ -385,9 +360,8 @@ class DBLayer
 		if ($default_value !== null && !is_int($default_value) && !is_float($default_value))
 			$default_value = '\''.$this->escape($default_value).'\'';
 
-		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' MODIFY '.$field_name.' '.$field_type.($allow_null ? ' ' : ' NOT NULL').($default_value !== null ? ' DEFAULT '.$default_value : ' ').($after_field !== null ? ' AFTER '.$after_field : '')) or error(__FILE__, __LINE__);
+	    $this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' MODIFY '.$field_name.' '.$field_type.($allow_null ? ' ' : ' NOT NULL').($default_value !== null ? ' DEFAULT '.$default_value : ' ').($after_field !== null ? ' AFTER '.$after_field : '')) or error(__FILE__, __LINE__);
 	}
-
 
 	function drop_field($table_name, $field_name, $no_prefix = false)
 	{
@@ -397,7 +371,6 @@ class DBLayer
 		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' DROP '.$field_name) or error(__FILE__, __LINE__);
 	}
 
-
 	function add_index($table_name, $index_name, $index_fields, $unique = false, $no_prefix = false)
 	{
 		if ($this->index_exists($table_name, $index_name, $no_prefix))
@@ -405,7 +378,6 @@ class DBLayer
 
 		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' ADD '.($unique ? 'UNIQUE ' : '').'INDEX '.($no_prefix ? '' : $this->prefix).$table_name.'_'.$index_name.' ('.implode(',', $index_fields).')') or error(__FILE__, __LINE__);
 	}
-
 
 	function drop_index($table_name, $index_name, $no_prefix = false)
 	{

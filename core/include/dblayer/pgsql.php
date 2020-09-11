@@ -15,19 +15,19 @@ if (!function_exists('pg_connect'))
 
 class DBLayer
 {
-	var $prefix;
-	var $link_id;
-	var $query_result;
-	var $last_query_text = array();
-	var $in_transaction = 0;
+    var $prefix;
+    var $link_id;
+    var $query_result;
+    var $last_query_text = array();
+    var $in_transaction = 0;
 
-	var $saved_queries = array();
-	var $num_queries = 0;
+    var $saved_queries = array();
+    var $num_queries = 0;
 
-	var $error_no = false;
-	var $error_msg = 'Unknown';
+    var $error_no = false;
+    var $error_msg = 'Unknown';
 
-	var $datatype_transformations = array(
+    var $datatype_transformations = array(
 		'/^(TINY|SMALL)INT( )?(\\([0-9]+\\))?( )?(UNSIGNED)?$/i'			=>	'SMALLINT',
 		'/^(MEDIUM)?INT( )?(\\([0-9]+\\))?( )?(UNSIGNED)?$/i'				=>	'INTEGER',
 		'/^BIGINT( )?(\\([0-9]+\\))?( )?(UNSIGNED)?$/i'						=>	'BIGINT',
@@ -35,7 +35,6 @@ class DBLayer
 		'/^DOUBLE( )?(\\([0-9,]+\\))?( )?(UNSIGNED)?$/i'					=>	'DOUBLE PRECISION',
 		'/^FLOAT( )?(\\([0-9]+\\))?( )?(UNSIGNED)?$/i'						=>	'REAL'
 	);
-
 
 	function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
 	{
@@ -76,18 +75,17 @@ class DBLayer
 		return $this->link_id;
 	}
 
-	function __destruct()
-	{
-	    $this->close();
-	}
-	
-	function start_transaction()
+    function __destruct()
+    {
+        $this->close();
+    }
+
+    function start_transaction()
 	{
 		++$this->in_transaction;
 
 		return (@pg_query($this->link_id, 'BEGIN')) ? true : false;
 	}
-
 
 	function end_transaction()
 	{
@@ -102,8 +100,7 @@ class DBLayer
 		}
 	}
 
-
-	function query($sql, $unbuffered = false)	// $unbuffered is ignored since there is no pgsql_unbuffered_query()
+    function query($sql, $unbuffered = false)	// $unbuffered is ignored since there is no pgsql_unbuffered_query()
 	{
 		if (strlen($sql) > FORUM_DATABASE_QUERY_MAXIMUM_LENGTH)
 			exit('Insane query. Aborting.');
@@ -144,8 +141,7 @@ class DBLayer
 		}
 	}
 
-
-	function query_build($query, $return_query_string = false, $unbuffered = false)
+    function query_build($query, $return_query_string = false, $unbuffered = false)
 	{
 		$sql = '';
 
@@ -235,36 +231,30 @@ class DBLayer
 		return ($return_query_string) ? $sql : $this->query($sql, $unbuffered);
 	}
 
-
 	function result($query_id = 0, $row = 0, $col = 0)
 	{
 		return ($query_id) ? @pg_fetch_result($query_id, $row, $col) : false;
 	}
-
 
 	function fetch_assoc($query_id = 0)
 	{
 		return ($query_id) ? @pg_fetch_assoc($query_id) : false;
 	}
 
-
 	function fetch_row($query_id = 0)
 	{
 		return ($query_id) ? @pg_fetch_row($query_id) : false;
 	}
-
 
 	function num_rows($query_id = 0)
 	{
 		return ($query_id) ? @pg_num_rows($query_id) : false;
 	}
 
-
 	function affected_rows()
 	{
 		return ($this->query_result) ? @pg_affected_rows($this->query_result) : false;
 	}
-
 
 	function insert_id()
 	{
@@ -286,18 +276,15 @@ class DBLayer
 		return false;
 	}
 
-
 	function get_num_queries()
 	{
 		return $this->num_queries;
 	}
 
-
 	function get_saved_queries()
 	{
 		return $this->saved_queries;
 	}
-
 
 	function free_result($query_id = false)
 	{
@@ -307,12 +294,10 @@ class DBLayer
 		return ($query_id) ? @pg_free_result($query_id) : false;
 	}
 
-
 	function escape($str)
 	{
 		return is_array($str) ? '' : pg_escape_string($str);
 	}
-
 
 	function error()
 	{
@@ -322,7 +307,6 @@ class DBLayer
 
 		return $result;
 	}
-
 
 	function close()
 	{
@@ -345,12 +329,10 @@ class DBLayer
 			return false;
 	}
 
-
 	function set_names($names)
 	{
 		return $this->query('SET NAMES \''.$this->escape($names).'\'');
 	}
-
 
 	function get_version()
 	{
@@ -362,13 +344,11 @@ class DBLayer
 		);
 	}
 
-
 	function table_exists($table_name, $no_prefix = false)
 	{
 		$result = $this->query('SELECT 1 FROM pg_class WHERE relname = \''.($no_prefix ? '' : $this->prefix).$this->escape($table_name).'\'');
 		return $this->num_rows($result) > 0;
 	}
-
 
 	function field_exists($table_name, $field_name, $no_prefix = false)
 	{
@@ -376,13 +356,11 @@ class DBLayer
 		return $this->num_rows($result) > 0;
 	}
 
-
 	function index_exists($table_name, $index_name, $no_prefix = false)
 	{
 		$result = $this->query('SELECT 1 FROM pg_index i INNER JOIN pg_class c1 ON c1.oid = i.indrelid INNER JOIN pg_class c2 ON c2.oid = i.indexrelid WHERE c1.relname = \''.($no_prefix ? '' : $this->prefix).$this->escape($table_name).'\' AND c2.relname = \''.($no_prefix ? '' : $this->prefix).$this->escape($table_name).'_'.$this->escape($index_name).'\'');
 		return $this->num_rows($result) > 0;
 	}
-
 
 	function create_table($table_name, $schema, $no_prefix = false)
 	{
@@ -432,7 +410,6 @@ class DBLayer
 		}
 	}
 
-
 	function drop_table($table_name, $no_prefix = false)
 	{
 		if (!$this->table_exists($table_name, $no_prefix))
@@ -440,7 +417,6 @@ class DBLayer
 
 		$this->query('DROP TABLE '.($no_prefix ? '' : $this->prefix).$table_name) or error(__FILE__, __LINE__);
 	}
-
 
 	function add_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = null, $no_prefix = false)
 	{
@@ -463,7 +439,6 @@ class DBLayer
 		if (!$allow_null)
 			$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' ALTER '.$field_name.' SET NOT NULL') or error(__FILE__, __LINE__);
 	}
-
 
 	function alter_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = null, $no_prefix = false)
 	{
@@ -489,7 +464,6 @@ class DBLayer
 			$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' ALTER '.$field_name.' SET NOT NULL') or error(__FILE__, __LINE__);
 	}
 
-
 	function drop_field($table_name, $field_name, $no_prefix = false)
 	{
 		if (!$this->field_exists($table_name, $field_name, $no_prefix))
@@ -498,7 +472,6 @@ class DBLayer
 		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' DROP '.$field_name) or error(__FILE__, __LINE__);
 	}
 
-
 	function add_index($table_name, $index_name, $index_fields, $unique = false, $no_prefix = false)
 	{
 		if ($this->index_exists($table_name, $index_name, $no_prefix))
@@ -506,7 +479,6 @@ class DBLayer
 
 		$this->query('CREATE '.($unique ? 'UNIQUE ' : '').'INDEX '.($no_prefix ? '' : $this->prefix).$table_name.'_'.$index_name.' ON '.($no_prefix ? '' : $this->prefix).$table_name.'('.implode(',', $index_fields).')') or error(__FILE__, __LINE__);
 	}
-
 
 	function drop_index($table_name, $index_name, $no_prefix = false)
 	{

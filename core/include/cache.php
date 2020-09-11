@@ -522,7 +522,7 @@ function generate_updates_cache()
 	}
 
 	// Contact the punbb.informer.com updates service
-	$result = get_remote_file('http://punbb.informer.com/update/?type=xml&version='.urlencode($forum_config['o_cur_version']).'&hotfixes='.implode(',', $hotfixes), 8);
+	$result = get_remote_file('https://punbb.informer.com/update/?type=xml&version='.urlencode($forum_config['o_cur_version']).'&hotfixes='.implode(',', $hotfixes), 8);
 
 	// Make sure we got everything we need
 	if ($result != null && strpos($result['content'], '</updates>') !== false)

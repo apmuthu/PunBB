@@ -38,7 +38,7 @@ if ($forum_user['g_read_board'] == '1' && $forum_config['o_quickjump'] == '1')
 ($hook = get_hook('ft_about_pre_copyright')) ? eval($hook) : null;
 
 ?>
-	<p id="copyright"><?php echo sprintf($lang_common['Powered by'], '<a href="http://punbb.informer.com/">PunBB</a>'.($forum_config['o_show_version'] == '1' ? ' '.$forum_config['o_cur_version'] : ''), '<a href="http://www.informer.com/">Informer Technologies, Inc</a>') ?></p>
+	<p id="copyright"><?php echo sprintf($lang_common['Powered by'], '<a href="https://punbb.informer.com/" target="_blank">PunBB</a>'.($forum_config['o_show_version'] == '1' ? ' '.$forum_config['o_cur_version'] : ''), '<a href="https://www.informer.com/" target="_blank">Informer Technologies, Inc</a>') ?></p>
 <?php
 
 ($hook = get_hook('ft_about_end')) ? eval($hook) : null;
