@@ -18,6 +18,10 @@ if (!defined('FORUM'))
 //
 function is_valid_email($email)
 {
+	// uncomment and edit lines below to block specific TLDs
+//	if (preg_match('/\.(space|club|pw)$/', $email))
+//		return false;
+
 	$return = ($hook = get_hook('em_fn_is_valid_email_start')) ? eval($hook) : null;
 	if ($return !== null)
 		return $return;
