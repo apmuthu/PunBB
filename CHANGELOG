@@ -2,6 +2,7 @@
 ===================
 Fix blocking 5 or more character TLDs in domain
 Optional fix to block specific TLDs (commented out by default)
+Fix warning for PHP 7.3 continue 2 instead of just continue which signals break
 
 2020-09-11 21:00:00
 ===================

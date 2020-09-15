@@ -1820,7 +1820,7 @@ function get_tracked_topics()
 		{
 			case 'f': $type = 'forums'; break;
 			case 't': $type = 'topics'; break;
-			default: continue;
+			default: continue 2;
 		}
 
 		$id = intval(substr($id_data, 1));
