@@ -18,6 +18,7 @@ $lang_ul = array(
 'User sort order'		=>	'User list sort order',
 'No of posts'			=>	'Number of posts',
 'Registered'			=>	'Registration date',
+'Last Visit'			=>	'Last Visit',
 'Ascending'				=>	'Ascending',
 'Descending'			=>	'Descending',
 'All users'				=>	'All users',

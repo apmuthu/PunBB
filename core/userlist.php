@@ -222,7 +222,7 @@ while ($cur_group = $forum_db->fetch_assoc($result))
 
 // Grab the users
 $query = array(
-	'SELECT'	=> 'u.id, u.username, u.title, u.num_posts, u.registered, g.g_id, g.g_user_title',
+	'SELECT'	=> 'u.id, u.username, u.title, u.num_posts, u.registered, u.last_visit, g.g_id, g.g_user_title',
 	'FROM'		=> 'users AS u',
 	'JOINS'		=> array(
 		array(
@@ -261,6 +261,7 @@ if (!empty($founded_user_datas))
 		$forum_page['table_header']['posts'] = '<th class="tc'.count($forum_page['table_header']).'" scope="col">'.$lang_ul['Posts'].'</th>';
 
 	$forum_page['table_header']['registered'] = '<th class="tc'.count($forum_page['table_header']).'" scope="col">'.$lang_ul['Registered'].'</th>';
+	$forum_page['table_header']['last_visit'] = '<th class="tc'.count($forum_page['table_header']).'" scope="col">'.$lang_ul['Last Visit'].'</th>';
 
 	($hook = get_hook('ul_results_pre_header_output')) ? eval($hook) : null;
 
@@ -288,6 +289,7 @@ if (!empty($founded_user_datas))
 			$forum_page['table_row']['posts'] = '<td class="tc'.count($forum_page['table_row']).'">'.forum_number_format($user_data['num_posts']).'</td>';
 
 		$forum_page['table_row']['registered'] = '<td class="tc'.count($forum_page['table_row']).'">'.format_time($user_data['registered'], 1).'</td>';
+		$forum_page['table_row']['last_visit'] = '<td class="tc'.count($forum_page['table_row']).'">'.format_time($user_data['last_visit'], 1).'</td>';
 
 		++$forum_page['item_count'];
 
